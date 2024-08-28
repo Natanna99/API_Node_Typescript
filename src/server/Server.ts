@@ -1,6 +1,9 @@
 //Codigo base do servidor
 import express from "express";
 
+//importando o dotenv para executar as variáveis de ambiente
+import "dotenv/config";
+
 // Importando o router
 import { router } from "../routers";
 
