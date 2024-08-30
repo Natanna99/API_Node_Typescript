@@ -4,8 +4,11 @@ import express from "express";
 //importando o dotenv para executar as variáveis de ambiente
 import "dotenv/config";
 
+// Importando o arquivo de tradução do yup
+import "../shared/services/TranslationsYup";
+
 // Importando o router
-import { router } from "../routers";
+import { routers } from "../routers/routes";
 
 const app = express();
 
@@ -13,6 +16,6 @@ const app = express();
 app.use(express.json());
 
 // Configuração de middleware - para realizar a chmada das rotas do routers
-app.use(router);
+app.use(routers);
 
 export { app };
