@@ -8,11 +8,13 @@ exports.app = void 0;
 const express_1 = __importDefault(require("express"));
 //importando o dotenv para executar as variáveis de ambiente
 require("dotenv/config");
+// Importando o arquivo de tradução do yup
+require("../shared/services/TranslationsYup");
 // Importando o router
-const routers_1 = require("../routers");
+const routes_1 = require("../routers/routes");
 const app = (0, express_1.default)();
 exports.app = app;
 // Configuração de middleware - para exibir dados do body das requisições
 app.use(express_1.default.json());
 // Configuração de middleware - para realizar a chmada das rotas do routers
-app.use(routers_1.router);
+app.use(routes_1.routers);
